@@ -19,7 +19,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>
 
 const inputClasses =
-  'w-full rounded-lg border border-slate-border bg-slate-muted/50 px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30'
+  'w-full rounded-lg border border-slate-border bg-slate-muted/50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30 dark:text-slate-200 dark:placeholder:text-slate-500'
 
 export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -53,8 +53,8 @@ export function ContactForm() {
     return (
       <div className="glass flex flex-col items-center rounded-xl p-10 text-center">
         <CheckCircle2 size={48} className="mb-4 text-teal-glow" />
-        <h3 className="text-xl font-semibold text-white">Message Sent</h3>
-        <p className="mt-2 max-w-sm text-slate-400">{statusMessage}</p>
+        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Message Sent</h3>
+        <p className="mt-2 max-w-sm text-slate-600 dark:text-slate-400">{statusMessage}</p>
         <Button
           variant="secondary"
           className="mt-6"
@@ -70,7 +70,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="glass space-y-5 rounded-xl p-6 md:p-8" noValidate>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
             Name
           </label>
           <input id="name" type="text" className={inputClasses} {...register('name')} />
@@ -79,7 +79,7 @@ export function ContactForm() {
           )}
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
             Email
           </label>
           <input id="email" type="email" className={inputClasses} {...register('email')} />
@@ -90,7 +90,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-slate-300">
+        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Subject
         </label>
         <input id="subject" type="text" className={inputClasses} {...register('subject')} />
@@ -100,7 +100,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">
           Message
         </label>
         <textarea

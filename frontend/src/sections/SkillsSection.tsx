@@ -10,7 +10,7 @@ export function SkillsSection() {
       label="Skills"
       title="Technical expertise"
       subtitle="A deep toolkit spanning the Java ecosystem, cloud infrastructure, and modern engineering practices."
-      className="bg-slate-elevated/20"
+      className="section-alt"
     >
       <div className="grid gap-6 md:grid-cols-2">
         {skillCategories.map((category, catIndex) => (

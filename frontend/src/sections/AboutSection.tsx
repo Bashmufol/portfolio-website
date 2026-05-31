@@ -31,7 +31,7 @@ export function AboutSection() {
             </div>
           </div>
           <div className="mt-4 text-center lg:text-left">
-            <p className="font-semibold text-white">{hero.name}</p>
+            <p className="font-semibold text-slate-900 dark:text-white">{hero.name}</p>
             <p className="text-sm text-slate-500">{hero.location}</p>
           </div>
         </motion.div>
@@ -42,7 +42,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="space-y-4 text-slate-400 leading-relaxed">
+          <div className="space-y-4 leading-relaxed text-slate-600 dark:text-slate-400">
             {about.summary.split('\n\n').map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
@@ -56,7 +56,7 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="flex gap-3 rounded-lg border border-slate-border/40 bg-slate-elevated/40 p-4 text-sm text-slate-300"
+                className="flex gap-3 rounded-lg border border-slate-border/40 bg-slate-elevated/40 p-4 text-sm text-slate-700 dark:text-slate-300"
               >
                 <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-teal-muted" />
                 {item}

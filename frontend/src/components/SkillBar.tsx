@@ -10,7 +10,7 @@ export function SkillBar({ name, level, delay = 0 }: SkillBarProps) {
   return (
     <div>
       <div className="mb-2 flex items-center justify-between text-sm">
-        <span className="font-medium text-slate-200">{name}</span>
+        <span className="font-medium text-slate-800 dark:text-slate-200">{name}</span>
         <span className="font-mono text-xs text-slate-500">{level}%</span>
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-slate-muted">

@@ -1,6 +1,21 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  --color-slate-deep: #f4f7fb;
+  --color-slate-elevated: #ffffff;
+  --color-slate-muted: #e8edf4;
+  --color-slate-border: #d1dbe8;
+  --color-copper: #b8894f;
+  --color-copper-light: #9a6f3a;
+  --color-teal-muted: #2d7575;
+  --color-teal-glow: #3d9494;
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.dark {
   --color-slate-deep: #0b1120;
   --color-slate-elevated: #151e32;
   --color-slate-muted: #1e293b;
@@ -9,8 +24,6 @@
   --color-copper-light: #e8c9a0;
   --color-teal-muted: #3d8b8b;
   --color-teal-glow: #4db8b8;
-  --font-sans: 'Instrument Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 @layer base {
@@ -33,21 +46,32 @@
   }
 
   body {
-    @apply bg-slate-deep font-sans text-slate-300 antialiased;
+    @apply bg-slate-deep font-sans text-slate-700 antialiased dark:text-slate-300;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 139, 139, 0.15), transparent),
-      radial-gradient(ellipse 60% 40% at 100% 50%, rgba(212, 165, 116, 0.08), transparent),
-      linear-gradient(rgba(42, 53, 72, 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(42, 53, 72, 0.3) 1px, transparent 1px);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(45, 117, 117, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 50%, rgba(184, 137, 79, 0.1), transparent),
+      linear-gradient(rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
     background-size:
       100% 100%,
       100% 100%,
       48px 48px,
       48px 48px;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 139, 139, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 50%, rgba(212, 165, 116, 0.08), transparent),
+      linear-gradient(rgba(42, 53, 72, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 53, 72, 0.3) 1px, transparent 1px);
   }
 
   ::selection {
-    @apply bg-copper/30 text-white;
+    @apply bg-copper/30 text-slate-900 dark:text-white;
   }
 
   :focus-visible {
@@ -57,7 +81,7 @@
 
 @layer utilities {
   .glass {
-    @apply border border-slate-border/60 bg-slate-elevated/70 backdrop-blur-xl;
+    @apply border border-slate-border/60 bg-slate-elevated/80 backdrop-blur-xl dark:bg-slate-elevated/70;
   }
 
   .text-gradient {
@@ -66,5 +90,9 @@
 
   .section-container {
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-alt {
+    @apply bg-slate-200/40 dark:bg-slate-elevated/20;
   }
 }

@@ -35,11 +35,11 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
             <div className="glass ml-14 flex-1 rounded-xl p-6 md:ml-0">
               <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{exp.role}</h3>
                   <p className="text-copper-light">{exp.company}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-sm text-slate-400">{exp.period}</p>
+                  <p className="font-mono text-sm text-slate-600 dark:text-slate-400">{exp.period}</p>
                   <p className="text-xs text-slate-500">{exp.location}</p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                 {exp.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex gap-2 text-sm leading-relaxed text-slate-400"
+                    className="flex gap-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
                   >
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-teal-muted" />
                     {highlight}

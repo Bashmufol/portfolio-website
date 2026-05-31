@@ -13,8 +13,8 @@ export function Footer() {
             <p className="font-mono text-sm font-semibold text-copper">
               {hero.name}
             </p>
-            <p className="mt-1 text-sm text-slate-500">{hero.title}</p>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-border/60 bg-slate-elevated/50 px-3 py-1.5 text-xs text-slate-400">
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-500">{hero.title}</p>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-border/60 bg-slate-elevated/50 px-3 py-1.5 text-xs text-slate-600 dark:text-slate-400">
               <Coffee size={14} className="text-copper" />
               Built with Spring Boot 4 & React
             </div>
@@ -27,7 +27,7 @@ export function Footer() {
                   <button
                     type="button"
                     onClick={() => scrollToSection(link.id)}
-                    className="text-sm text-slate-400 transition-colors hover:text-copper-light"
+                    className="text-sm text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
                   >
                     {link.label}
                   </button>

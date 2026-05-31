@@ -32,7 +32,7 @@ function TypingTagline({ text }: { text: string }) {
   }, [text])
 
   return (
-    <p className="max-w-2xl text-lg leading-relaxed text-slate-400 md:text-xl">
+    <p className="max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400 md:text-xl">
       {displayed}
       {!done && <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-copper" />}
     </p>
@@ -63,7 +63,7 @@ export function HeroSection() {
           <p className="font-mono text-sm uppercase tracking-widest text-slate-500">
             Hello, I'm
           </p>
-          <h1 className="mt-2 text-5xl font-bold tracking-tight text-white md:text-7xl">
+          <h1 className="mt-2 text-5xl font-bold tracking-tight text-slate-900 dark:text-white md:text-7xl">
             <span className="text-gradient">{hero.name}</span>
           </h1>
           <p className="mt-4 font-mono text-xl text-copper md:text-2xl">{hero.title}</p>

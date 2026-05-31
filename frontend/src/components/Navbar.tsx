@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { hero, navLinks, type SectionId } from '../data/portfolio'
 import { scrollToSection, useScrollSpy } from '../hooks/useScrollSpy'
 import { Button } from './Button'
+import { ThemeToggle } from './ThemeToggle'
 
 const sectionIds: SectionId[] = ['hero', ...navLinks.map((l) => l.id)]
 
@@ -41,7 +42,7 @@ export function Navbar() {
                   className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                     activeSection === link.id
                       ? 'text-copper-light'
-                      : 'text-slate-400 hover:text-slate-200'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
                   }`}
                 >
                   {link.label}
@@ -50,21 +51,25 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden md:block">
+          <div className="hidden items-center gap-3 md:flex">
+            <ThemeToggle />
             <Button variant="secondary" onClick={() => handleNavClick('contact')}>
               Get in Touch
             </Button>
           </div>
 
-          <button
-            type="button"
-            className="rounded-md p-2 text-slate-300 md:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-expanded={mobileOpen}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="rounded-md p-2 text-slate-600 dark:text-slate-300"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
 
         {mobileOpen && (
@@ -78,7 +83,7 @@ export function Navbar() {
                     className={`block w-full rounded-md px-3 py-2.5 text-left text-sm font-medium ${
                       activeSection === link.id
                         ? 'bg-slate-elevated text-copper-light'
-                        : 'text-slate-300'
+                        : 'text-slate-700 dark:text-slate-300'
                     }`}
                   >
                     {link.label}

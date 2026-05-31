@@ -31,11 +31,11 @@ export function SectionShell({
           <p className="font-mono text-sm font-medium uppercase tracking-widest text-teal-muted">
             {label}
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white md:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl">
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-4 max-w-2xl text-lg text-slate-400">{subtitle}</p>
+            <p className="mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">{subtitle}</p>
           )}
         </motion.div>
         {children}

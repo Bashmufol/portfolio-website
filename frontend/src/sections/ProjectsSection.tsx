@@ -25,7 +25,7 @@ export function ProjectsSection() {
       label="Projects"
       title="Selected work"
       subtitle="Representative projects showcasing API design, microservices architecture, and production-ready delivery."
-      className="bg-slate-elevated/20"
+      className="section-alt"
     >
       <div className="mb-8 flex flex-wrap gap-2">
         {filters.map(({ value, label }) => (
@@ -35,8 +35,8 @@ export function ProjectsSection() {
             onClick={() => setFilter(value)}
             className={`rounded-lg px-4 py-2 font-mono text-sm font-medium transition-all ${
               filter === value
-                ? 'bg-copper text-slate-deep shadow-lg shadow-copper/20'
-                : 'border border-slate-border bg-slate-elevated/50 text-slate-400 hover:border-copper/30 hover:text-slate-200'
+                ? 'bg-copper text-white shadow-lg shadow-copper/20 dark:text-slate-deep'
+                : 'border border-slate-border bg-slate-elevated/50 text-slate-600 hover:border-copper/30 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
             }`}
           >
             {label}

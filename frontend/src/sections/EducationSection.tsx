@@ -13,7 +13,7 @@ export function EducationSection() {
     >
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
-          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
             <GraduationCap size={20} className="text-copper" />
             Education
           </h3>
@@ -29,13 +29,13 @@ export function EducationSection() {
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <p className="font-semibold text-white">{item.degree}</p>
+                    <p className="font-semibold text-slate-900 dark:text-white">{item.degree}</p>
                     <p className="text-copper-light">{item.institution}</p>
                   </div>
                   <span className="font-mono text-sm text-slate-500">{item.period}</span>
                 </div>
                 {item.details && (
-                  <p className="mt-3 text-sm text-slate-400">{item.details}</p>
+                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">{item.details}</p>
                 )}
               </motion.div>
             ))}
@@ -43,7 +43,7 @@ export function EducationSection() {
         </div>
 
         <div>
-          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
+          <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
             <Award size={20} className="text-teal-muted" />
             Certifications
           </h3>
@@ -59,7 +59,7 @@ export function EducationSection() {
               >
                 <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-copper" />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-slate-200">{cert.name}</p>
+                  <p className="text-sm font-medium text-slate-800 dark:text-slate-200">{cert.name}</p>
                   <p className="text-xs text-slate-500">
                     {cert.issuer} · {cert.year}
                   </p>

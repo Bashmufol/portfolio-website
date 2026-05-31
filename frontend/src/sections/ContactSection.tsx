@@ -17,11 +17,11 @@ export function ContactSection() {
       label="Contact"
       title={contact.headline}
       subtitle={contact.subtext}
-      className="bg-slate-elevated/20"
+      className="section-alt"
     >
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div>
-          <p className="mb-6 text-slate-400">
+          <p className="mb-6 text-slate-600 dark:text-slate-400">
             Prefer direct contact? Reach out through any of these channels.
           </p>
           <ul className="space-y-4">
@@ -43,7 +43,7 @@ export function ContactSection() {
                       )}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-white">{link.label}</p>
+                      <p className="text-sm font-medium text-slate-900 dark:text-white">{link.label}</p>
                       <p className="text-xs text-slate-500">
                         {link.icon === 'mail' ? contact.email : link.href.replace('https://', '')}
                       </p>

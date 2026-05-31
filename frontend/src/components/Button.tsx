@@ -13,10 +13,11 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    'bg-copper text-slate-deep hover:bg-copper-light shadow-lg shadow-copper/20',
+    'bg-copper text-white hover:bg-copper-light shadow-lg shadow-copper/20 dark:text-slate-deep',
   secondary:
-    'border border-slate-border bg-slate-elevated/80 text-slate-200 hover:border-copper/50 hover:text-copper-light',
-  ghost: 'text-slate-300 hover:text-copper-light hover:bg-slate-elevated/50',
+    'border border-slate-border bg-slate-elevated/80 text-slate-700 hover:border-copper/50 hover:text-copper-light dark:text-slate-200',
+  ghost:
+    'text-slate-600 hover:text-copper-light hover:bg-slate-elevated/50 dark:text-slate-300',
 }
 
 export function Button({
