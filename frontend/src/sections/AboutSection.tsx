@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, Code2 } from 'lucide-react'
+import { Code2 } from 'lucide-react'
 import { about, hero } from '../data/portfolio'
 import { SectionShell } from '../components/SectionShell'
 
@@ -42,27 +42,11 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="space-y-4 leading-relaxed text-slate-600 dark:text-slate-400">
+          <div className="space-y-4 text-justify leading-relaxed text-slate-600 dark:text-slate-400">
             {about.summary.split('\n\n').map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}
           </div>
-
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {about.highlights.map((item, index) => (
-              <motion.li
-                key={item}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="flex gap-3 rounded-lg border border-slate-border/40 bg-slate-elevated/40 p-4 text-sm text-slate-700 dark:text-slate-300"
-              >
-                <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-teal-muted" />
-                {item}
-              </motion.li>
-            ))}
-          </ul>
         </motion.div>
       </div>
     </SectionShell>

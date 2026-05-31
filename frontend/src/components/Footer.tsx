@@ -1,4 +1,3 @@
-import { Coffee } from 'lucide-react'
 import { hero, navLinks } from '../data/portfolio'
 import { scrollToSection } from '../hooks/useScrollSpy'
 
@@ -14,10 +13,6 @@ export function Footer() {
               {hero.name}
             </p>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-500">{hero.title}</p>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-border/60 bg-slate-elevated/50 px-3 py-1.5 text-xs text-slate-600 dark:text-slate-400">
-              <Coffee size={14} className="text-copper" />
-              Built with Spring Boot 4 & React
-            </div>
           </div>
 
           <nav aria-label="Footer navigation">

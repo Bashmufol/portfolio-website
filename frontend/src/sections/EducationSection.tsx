@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Award, GraduationCap } from 'lucide-react'
-import { certifications, education } from '../data/portfolio'
+import { accomplishments, education } from '../data/portfolio'
 import { SectionShell } from '../components/SectionShell'
 
 export function EducationSection() {
@@ -8,8 +8,8 @@ export function EducationSection() {
     <SectionShell
       id="education"
       label="Education"
-      title="Education & certifications"
-      subtitle="Formal training and industry credentials that complement hands-on engineering experience."
+      title="Education & accomplishments"
+      subtitle="Academic background and recognition that reflect leadership, excellence, and community impact."
     >
       <div className="grid gap-8 lg:grid-cols-2">
         <div>
@@ -45,12 +45,12 @@ export function EducationSection() {
         <div>
           <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
             <Award size={20} className="text-teal-muted" />
-            Certifications
+            Accomplishments
           </h3>
           <div className="space-y-3">
-            {certifications.map((cert, index) => (
+            {accomplishments.map((item, index) => (
               <motion.div
-                key={cert.name}
+                key={item.title}
                 initial={{ opacity: 0, x: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -59,10 +59,10 @@ export function EducationSection() {
               >
                 <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-copper" />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-slate-800 dark:text-slate-200">{cert.name}</p>
-                  <p className="text-xs text-slate-500">
-                    {cert.issuer} · {cert.year}
+                  <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
+                    {item.title}
                   </p>
+                  <p className="mt-1 text-xs text-slate-500">{item.description}</p>
                 </div>
               </motion.div>
             ))}

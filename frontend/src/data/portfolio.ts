@@ -1,5 +1,3 @@
-// Replace placeholder content below with your personal details.
-
 export interface SocialLink {
   label: string
   href: string
@@ -25,7 +23,6 @@ export interface Project {
   tech: string[]
   github?: string
   demo?: string
-  category: 'backend' | 'fullstack'
 }
 
 export interface Education {
@@ -35,10 +32,9 @@ export interface Education {
   details?: string
 }
 
-export interface Certification {
-  name: string
-  issuer: string
-  year: string
+export interface Accomplishment {
+  title: string
+  description: string
 }
 
 export const navLinks = [
@@ -53,182 +49,161 @@ export const navLinks = [
 export type SectionId = (typeof navLinks)[number]['id'] | 'hero'
 
 export const hero = {
-  name: 'Alex Morgan',
-  title: 'Java Backend Engineer',
+  name: 'Bashir Muhammed',
+  title: 'Java Backend Developer',
   tagline:
     'Building resilient, scalable systems with Spring Boot, clean architecture, and a focus on measurable business impact.',
   availability: 'Open to opportunities',
-  location: 'San Francisco, CA',
-  yearsExperience: 6,
+  location: 'Lagos, Nigeria',
+  yearsExperience: 3,
 }
 
 export const about = {
-  summary: `I'm a backend engineer specializing in Java and the Spring ecosystem. I design and deliver production-grade APIs, microservices, and data pipelines that power high-traffic enterprise applications.
+  summary: `I've spent the last few years on Java backend work, building REST APIs and keeping services running in production. That meant working closely with databases, containerizing applications with Docker, and supporting deployments on AWS and Kubernetes.
 
-My approach combines solid domain modeling, test-driven development, and pragmatic DevOps — ensuring systems are not only well-architected but also operable in production. I thrive in collaborative teams where code quality and clear communication matter.`,
-  highlights: [
-    '6+ years building REST APIs & event-driven microservices',
-    'Deep expertise in Spring Boot, JPA/Hibernate, and PostgreSQL',
-    'Experience with CI/CD, Docker, Kubernetes, and AWS',
-    'Strong advocate for clean code, code reviews, and mentoring',
-  ],
+What I enjoy most is the day-to-day engineering: cleaning up code so the next person can follow it, learning from senior developers, and doing my part in CI/CD so features ship on time. I pick things up quickly, I communicate clearly, and I'm looking for a team where I can keep growing as a backend engineer.`,
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Languages',
+    name: 'Backend',
     skills: [
-      { name: 'Java', level: 95 },
-      { name: 'Kotlin', level: 70 },
-      { name: 'SQL', level: 90 },
-      { name: 'TypeScript', level: 65 },
+      { name: 'Core Java', level: 90 },
+      { name: 'Spring Boot', level: 88 },
+      { name: 'MySQL', level: 85 },
+      { name: 'PostgreSQL', level: 80 },
+      { name: 'MongoDB', level: 75 },
+      { name: 'Redis', level: 72 },
+      { name: 'Microservices', level: 70 },
     ],
   },
   {
-    name: 'Frameworks',
+    name: 'Cloud & DevOps',
     skills: [
-      { name: 'Spring Boot', level: 95 },
-      { name: 'Spring Security', level: 85 },
-      { name: 'Spring Data JPA', level: 90 },
-      { name: 'Hibernate', level: 85 },
+      { name: 'AWS (ECS, Lambda)', level: 75 },
+      { name: 'Docker', level: 82 },
+      { name: 'Kubernetes', level: 70 },
+      { name: 'Git', level: 90 },
+      { name: 'GitHub Actions', level: 78 },
+      { name: 'GitLab CI', level: 75 },
     ],
   },
   {
-    name: 'Tools & Platforms',
+    name: 'Engineering Practices',
     skills: [
-      { name: 'PostgreSQL', level: 90 },
-      { name: 'Redis', level: 80 },
-      { name: 'Docker', level: 85 },
-      { name: 'Kubernetes', level: 75 },
-      { name: 'AWS', level: 80 },
-      { name: 'Kafka', level: 75 },
+      { name: 'OOP', level: 90 },
+      { name: 'SOLID Principles', level: 85 },
+      { name: 'Design Patterns', level: 80 },
+      { name: 'System Design', level: 72 },
+      { name: 'Testing', level: 78 },
     ],
   },
   {
-    name: 'Practices',
+    name: 'Frontend (Supporting)',
     skills: [
-      { name: 'REST API Design', level: 95 },
-      { name: 'TDD / JUnit', level: 90 },
-      { name: 'CI/CD', level: 85 },
-      { name: 'Agile / Scrum', level: 90 },
+      { name: 'HTML', level: 80 },
+      { name: 'Thymeleaf', level: 82 },
+      { name: 'CSS', level: 75 },
+      { name: 'Bootstrap', level: 78 },
     ],
   },
 ]
 
 export const experiences: Experience[] = [
   {
-    company: 'FinTech Solutions Inc.',
-    role: 'Senior Java Backend Engineer',
-    period: '2022 — Present',
-    location: 'Remote',
-    highlights: [
-      'Led migration of monolithic payment service to 8 Spring Boot microservices, reducing deployment time by 70%.',
-      'Designed event-driven order processing pipeline handling 50K+ transactions/day with Kafka and idempotent consumers.',
-      'Introduced contract testing and improved API test coverage from 62% to 91%.',
-    ],
-  },
-  {
-    company: 'CloudScale Systems',
+    company: 'Sysserve',
     role: 'Java Backend Developer',
-    period: '2019 — 2022',
-    location: 'San Francisco, CA',
+    period: 'Dec 2022 — Jul 2025',
+    location: 'Lagos, Nigeria',
     highlights: [
-      'Built multi-tenant SaaS APIs serving 200+ enterprise clients with Spring Boot and PostgreSQL.',
-      'Optimized critical query paths, cutting p99 latency from 800ms to 120ms.',
-      'Mentored 3 junior developers on Spring best practices and code review standards.',
+      'Developed and maintained backend services with Java and Spring Boot.',
+      'Built and optimized REST APIs consumed by different applications.',
+      'Gained experience with Docker, Kubernetes, and AWS by containerizing applications and supporting deployments.',
+      'Contributed to CI/CD pipelines using GitHub Actions and GitLab CI, improving code release processes.',
+      'Worked with senior developers to refactor code for better readability and maintainability.',
+      'Collaborated with cross-functional teams to deliver features on time and support ongoing product improvements.',
     ],
   },
   {
-    company: 'DataFlow Analytics',
-    role: 'Junior Java Developer',
-    period: '2018 — 2019',
-    location: 'Oakland, CA',
+    company: 'IRL IT Solutions',
+    role: 'Computer Operator',
+    period: 'Jul 2019 — Sep 2021',
+    location: 'Kaduna, Nigeria',
     highlights: [
-      'Developed REST endpoints and batch jobs for ETL pipelines processing 2M+ records daily.',
-      'Implemented JWT-based authentication and role-based access control.',
-      'Contributed to migration from Java 8 to Java 11 with zero production incidents.',
+      'Conducted ICT training sessions for clients.',
+      'Provided technical troubleshooting for computer systems, reducing system downtime.',
+      'Collaborated with the IT team to resolve system and database issues.',
+      'Operated and maintained computer systems for CBT services.',
+      'Provided front-desk technical assistance, enhancing client satisfaction through clear communication and effective problem resolution.',
     ],
   },
 ]
 
 export const projects: Project[] = [
   {
-    title: 'OrderFlow Microservices',
+    title: 'Legally',
     description:
-      'Event-driven order management platform with saga orchestration, dead-letter handling, and observability dashboards.',
-    tech: ['Java 21', 'Spring Boot 3', 'Kafka', 'PostgreSQL', 'Redis'],
-    github: 'https://github.com',
-    category: 'backend',
+      'Legally is a web app that helps people understand everyday legal questions (tenancy, land, employment, police encounters, and more) in plain language. It is not a substitute for a lawyer, but a starting point for clarity. Legally lets users describe a situation by text, voice, or uploads such as photos and PDFs. The app works out which country and region apply, runs research through a chain of AI providers with fallback when one fails, and returns a summary, legal points with source links where possible, practical steps, and contacts for relevant organisations. Voice and files are processed so the system can respond to real evidence, not only typed questions. Sessions and uploads expire after inactivity so data is not kept without use.',
+    tech: ['Java 21', 'Spring Boot 4', 'Spring AI', 'Firebase', 'Google Cloud', 'JUnit', 'Docker'],
+    github: 'https://github.com/Bashmufol/Legally',
+    demo: 'https://legally-7f34d.web.app/',
   },
   {
-    title: 'AuthGateway API',
+    title: 'PriceWise',
     description:
-      'Centralized OAuth2/OIDC authorization server with JWT issuance, refresh token rotation, and rate limiting.',
-    tech: ['Spring Security', 'Spring Boot', 'Redis', 'PostgreSQL'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
-    category: 'backend',
+      'Product price comparison web app that scrapes e-commerce sites with JSoup, sorts results by price, and helps users find the best deals quickly.',
+    tech: ['Spring Boot', 'Thymeleaf', 'Bootstrap', 'JSoup'],
+    github: 'https://github.com/bashmufol',
   },
   {
-    title: 'InventorySync Service',
+    title: 'Authentication API',
     description:
-      'Real-time inventory synchronization across warehouses with optimistic locking and conflict resolution.',
-    tech: ['Java', 'Spring Data JPA', 'RabbitMQ', 'Docker'],
-    github: 'https://github.com',
-    category: 'backend',
-  },
-  {
-    title: 'DevPortal Platform',
-    description:
-      'Internal developer portal with API documentation, service catalog, and deployment status — full-stack delivery.',
-    tech: ['Spring Boot', 'React', 'PostgreSQL', 'Kubernetes'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
-    category: 'fullstack',
-  },
-  {
-    title: 'MetricsCollector',
-    description:
-      'Lightweight metrics aggregation service with Prometheus exporters and custom Micrometer dashboards.',
-    tech: ['Spring Boot', 'Micrometer', 'Prometheus', 'Grafana'],
-    github: 'https://github.com',
-    category: 'backend',
-  },
-  {
-    title: 'TaskBoard API',
-    description:
-      'Kanban-style project management REST API with WebSocket notifications and team collaboration features.',
-    tech: ['Spring Boot', 'WebSocket', 'PostgreSQL', 'React'],
-    github: 'https://github.com',
-    demo: 'https://example.com',
-    category: 'fullstack',
+      'Secure authentication API with JWT-based login and session handling, user management, and token-based password reset.',
+    tech: ['Spring Boot', 'Spring Security', 'JWT', 'MySQL'],
+    github: 'https://github.com/bashmufol',
   },
 ]
 
 export const education: Education[] = [
   {
-    institution: 'University of California, Berkeley',
-    degree: 'B.S. Computer Science',
-    period: '2014 — 2018',
-    details: 'Focus on software engineering and distributed systems.',
+    institution: 'University of Ilorin, Nigeria',
+    degree: 'Bachelor of Science',
+    period: 'Expected Oct 2026',
+    details:
+      'Relevant coursework: Data Structures, Algorithms, Database Systems. Technical project: built a Java-based inventory system for lab samples, reducing entry errors.',
   },
 ]
 
-export const certifications: Certification[] = [
-  { name: 'Oracle Certified Professional: Java SE 17 Developer', issuer: 'Oracle', year: '2023' },
-  { name: 'Spring Professional Certification', issuer: 'VMware Tanzu', year: '2022' },
-  { name: 'AWS Certified Developer – Associate', issuer: 'Amazon Web Services', year: '2021' },
+export const accomplishments: Accomplishment[] = [
+  {
+    title: 'AAF Scholarship Beneficiary',
+    description: 'Awarded for academic excellence and leadership potential.',
+  },
+  {
+    title: 'Organizing Member, Google Developer Student Clubs',
+    description:
+      'Contributed to planning, coordinating, and executing impactful tech events and initiatives for the student developer community.',
+  },
+  {
+    title: "NSBS Students' Representative Council Leadership Award",
+    description:
+      'Honored for student leadership roles and initiatives impacting 800+ students.',
+  },
 ]
 
 export const socialLinks: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: 'linkedin' },
-  { label: 'Email', href: 'mailto:alex.morgan@example.com', icon: 'mail' },
+  { label: 'GitHub', href: 'https://github.com/bashmufol', icon: 'github' },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/bashir-muhammed',
+    icon: 'linkedin',
+  },
+  { label: 'Email', href: 'mailto:bashmufol@gmail.com', icon: 'mail' },
 ]
 
 export const contact = {
-  email: 'alex.morgan@example.com',
-  headline: "Let's build something great together",
+  email: 'bashmufol@gmail.com',
+  headline: "Let's connect",
   subtext:
-    "Whether you have a role in mind, a project to discuss, or just want to connect — I'd love to hear from you.",
+    "Whether you're hiring, collaborating on a project, or just want to say hello — I'd love to hear from you.",
 }
