@@ -27,8 +27,46 @@
 }
 
 @layer base {
+  :root {
+    --theme-duration: 0.5s;
+    --theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.theme-switching,
+    html.theme-switching body,
+    html.theme-switching .glass,
+    html.theme-switching .section-alt,
+    html.theme-switching header,
+    html.theme-switching footer,
+    html.theme-switching nav,
+    html.theme-switching section,
+    html.theme-switching article,
+    html.theme-switching button,
+    html.theme-switching a,
+    html.theme-switching input,
+    html.theme-switching textarea,
+    html.theme-switching label,
+    html.theme-switching h1,
+    html.theme-switching h2,
+    html.theme-switching h3,
+    html.theme-switching p,
+    html.theme-switching span,
+    html.theme-switching li {
+      transition-property: background-color, border-color, color, fill, stroke, box-shadow,
+        outline-color;
+      transition-duration: var(--theme-duration);
+      transition-timing-function: var(--theme-ease);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -42,6 +80,27 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.01ms !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: var(--theme-duration);
+      animation-timing-function: var(--theme-ease);
+    }
+
+    ::view-transition-old(root) {
+      z-index: 1;
+    }
+
+    ::view-transition-new(root) {
+      z-index: 2;
     }
   }
 
@@ -57,9 +116,6 @@
       100% 100%,
       48px 48px,
       48px 48px;
-    transition:
-      background-color 0.25s ease,
-      color 0.25s ease;
   }
 
   .dark body {
