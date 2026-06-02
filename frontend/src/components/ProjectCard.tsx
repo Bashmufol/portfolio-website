@@ -1,6 +1,8 @@
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Layers } from 'lucide-react'
 import { GitHubIcon } from './SocialIcons'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { getArchitecturePath } from '../data/architecture'
 import type { Project } from '../data/portfolio'
 
 interface ProjectCardProps {
@@ -36,15 +38,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ))}
       </div>
 
-      <div className="flex gap-3 border-t border-slate-border/40 pt-4">
+      <div className="flex flex-nowrap items-center gap-4 overflow-x-auto border-t border-slate-border/40 pt-4 [scrollbar-width:none] sm:gap-5 [&::-webkit-scrollbar]:hidden">
         {project.github && (
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-sm text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
           >
-            <GitHubIcon className="h-4 w-4" />
+            <GitHubIcon className="h-4 w-4 shrink-0" />
             Code
           </a>
         )}
@@ -53,12 +55,19 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-slate-600 transition-colors hover:text-teal-glow dark:text-slate-400"
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-sm text-slate-600 transition-colors hover:text-teal-glow dark:text-slate-400"
           >
-            <ExternalLink size={16} />
+            <ExternalLink size={16} className="shrink-0" />
             Live Demo
           </a>
         )}
+        <Link
+          to={getArchitecturePath(project.slug)}
+          className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-sm text-slate-600 transition-colors hover:text-teal-glow dark:text-slate-400"
+        >
+          <Layers size={16} className="shrink-0" aria-hidden />
+          Backend architecture
+        </Link>
       </div>
     </motion.article>
   )

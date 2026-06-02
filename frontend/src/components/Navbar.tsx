@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { hero, navLinks, type SectionId } from '../data/portfolio'
 import { scrollToSection, useScrollSpy } from '../hooks/useScrollSpy'
 import { Button } from './Button'
@@ -9,11 +10,27 @@ const sectionIds: SectionId[] = ['hero', ...navLinks.map((l) => l.id)]
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const onHome = location.pathname === '/'
   const activeSection = useScrollSpy(sectionIds)
 
   const handleNavClick = (id: string) => {
-    scrollToSection(id)
     setMobileOpen(false)
+    if (!onHome) {
+      navigate(`/#${id}`)
+      return
+    }
+    scrollToSection(id)
+  }
+
+  const handleLogoClick = () => {
+    setMobileOpen(false)
+    if (!onHome) {
+      navigate('/')
+      return
+    }
+    scrollToSection('hero')
   }
 
   return (
@@ -25,7 +42,7 @@ export function Navbar() {
         <div className="section-container flex h-16 items-center justify-between">
           <button
             type="button"
-            onClick={() => handleNavClick('hero')}
+            onClick={handleLogoClick}
             className="font-mono text-sm font-semibold text-copper transition-colors hover:text-copper-light"
           >
             {hero.name.split(' ')[0]}

@@ -8,6 +8,7 @@ A professional full-stack portfolio website built with **Spring Boot 4.0.6** and
 - Static content managed in one TypeScript file (`frontend/src/data/portfolio.ts`)
 - Contact form with client + server validation, sending email via SMTP
 - Responsive design with scroll-spy navigation and subtle animations
+- Per-project **Backend architecture** pages with system design docs and diagrams (`/projects/{slug}/architecture`)
 - Production-ready single JAR deployment (Spring Boot serves the React build)
 
 ## Prerequisites

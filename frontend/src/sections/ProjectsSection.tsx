@@ -11,9 +11,9 @@ export function ProjectsSection() {
       subtitle="Representative projects showcasing API design, microservices architecture, and production-ready delivery."
       className="section-alt"
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
-          <ProjectCard key={project.title} project={project} index={index} />
+          <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
     </SectionShell>

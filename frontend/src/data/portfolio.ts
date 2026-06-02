@@ -18,6 +18,7 @@ export interface Experience {
 }
 
 export interface Project {
+  slug: string
   title: string
   description: string
   tech: string[]
@@ -141,14 +142,16 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    slug: 'legally',
     title: 'Legally',
     description:
-      'Legally is a web app that helps people understand everyday legal questions (tenancy, land, employment, police encounters, and more) in plain language. It is not a substitute for a lawyer, but a starting point for clarity. Legally lets users describe a situation by text, voice, or uploads such as photos and PDFs. The app works out which country and region apply, runs research through a chain of AI providers with fallback when one fails, and returns a summary, legal points with source links where possible, practical steps, and contacts for relevant organisations. Voice and files are processed so the system can respond to real evidence, not only typed questions. Sessions and uploads expire after inactivity so data is not kept without use.',
+      'Legally is a web app that helps people understand everyday legal questions (tenancy, land, employment, police encounters, and more) in plain language. It is not a substitute for a lawyer, but a starting point for clarity. Legally lets users describe a situation by text, voice, or uploads such as photos and PDFs. The app works out which country and region apply, runs research through a chain of AI providers with fallback when one fails, and returns a summary, legal points with source links where possible, practical steps, and contacts for relevant organisations. Voice and files are processed so the system can respond to real evidence, not only typed questions. Sessions and uploads expire after inactivity so data is not kept without use. I built the backend in Java 21 with Spring Boot as a REST API on Google Cloud Run, using PostgreSQL (Cloud SQL) for sessions and history, Firebase for authentication and file storage, and a provider-chain design that orchestrates Gemini and fallback LLMs through Google Speech-to-Text and custom integration services.',
     tech: ['Java 21', 'Spring Boot 4', 'Spring AI', 'Firebase', 'Google Cloud', 'JUnit', 'Docker'],
     github: 'https://github.com/Bashmufol/Legally',
     demo: 'https://legally-7f34d.web.app/',
   },
   {
+    slug: 'pricewise',
     title: 'PriceWise',
     description:
       'Product price comparison web app that scrapes e-commerce sites with JSoup, sorts results by price, and helps users find the best deals quickly.',
@@ -156,6 +159,7 @@ export const projects: Project[] = [
     github: 'https://github.com/bashmufol',
   },
   {
+    slug: 'authentication-api',
     title: 'Authentication API',
     description:
       'Secure authentication API with JWT-based login and session handling, user management, and token-based password reset.',
