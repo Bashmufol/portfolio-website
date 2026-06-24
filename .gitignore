@@ -3,14 +3,6 @@
 .env.local
 .env.*.local
 
-# Java / Maven
-backend/target/
-backend/src/main/resources/static/**
-!backend/src/main/resources/static/.gitkeep
-backend/.classpath
-backend/.project
-backend/.settings/
-
 # Node
 frontend/node_modules/
 frontend/dist/
@@ -26,5 +18,3 @@ Thumbs.db
 
 # Logs
 *.log
-.env.example
-*.pdf

@@ -1,64 +1,50 @@
 # Java Developer Portfolio
 
-A professional full-stack portfolio website built with **Spring Boot 4.0.6** and **React 19 + TypeScript + Tailwind CSS 4**. Designed to showcase backend engineering expertise with a polished, distinctive UI.
+A professional portfolio website built with **React 19**, **TypeScript**, and **Tailwind CSS 4**. Contact form powered by **Formspree**. Designed to showcase backend engineering expertise through project write-ups and architecture documentation.
 
 ## Features
 
-- Single-page portfolio with Hero, About, Skills, Experience, Projects, Education, and Contact sections
-- Static content managed in one TypeScript file (`frontend/src/data/portfolio.ts`)
-- Contact form with client + server validation, sending email via SMTP
-- Responsive design with scroll-spy navigation and subtle animations
-- Per-project **Backend architecture** pages with system design docs and diagrams (`/projects/{slug}/architecture`)
-- Production-ready single JAR deployment (Spring Boot serves the React build)
+- Hero, About, Skills, Experience, Projects, Education, and Contact sections
+- Content managed in [`frontend/src/data/portfolio.ts`](frontend/src/data/portfolio.ts)
+- Contact form via Formspree (no server required)
+- Per-project **Backend architecture** pages (`/projects/{slug}/architecture`)
+- Light/dark mode, responsive layout, scroll-spy navigation
+- Deployable as a static site on Vercel
 
-## Prerequisites
-
-- **Java 21** (required for Spring Boot 4)
-- **Maven 3.9+**
-- **Node.js 20+** and npm
-- SMTP credentials (e.g. Gmail App Password) for the contact form
-
-## Project Structure
+## Project structure
 
 ```
 porfolio-site/
-├── backend/          # Spring Boot 4.0.6 API
-├── frontend/         # React + TypeScript + Tailwind
-├── .env.example      # Environment variable template
+├── frontend/          # React app (deploy this folder to Vercel)
+│   ├── src/
+│   ├── public/
+│   ├── vercel.json    # SPA routing for architecture pages
+│   └── .env.example
 └── README.md
 ```
 
-## Quick Start (Development)
+## Local development
 
-### 1. Configure environment
+### 1. Formspree setup
 
-Copy the example env file and fill in your SMTP details:
+1. Create a free account at [formspree.io](https://formspree.io)
+2. Create a new form and set the notification email to your inbox
+3. Copy the form ID from `https://formspree.io/f/YOUR_FORM_ID` (use **only** `YOUR_FORM_ID`)
+
+### 2. Environment variables
 
 ```bash
+cd frontend
 cp .env.example .env
 ```
 
-Set the variables in your shell or IDE run configuration before starting the backend.
+Edit `frontend/.env`:
 
-**Windows PowerShell example:**
-
-```powershell
-$env:MAIL_USERNAME="your-email@gmail.com"
-$env:MAIL_PASSWORD="your-app-password"
-$env:MAIL_TO="your-email@gmail.com"
-$env:MAIL_FROM="your-email@gmail.com"
+```
+VITE_FORMSPREE_FORM_ID=your-form-id-here
 ```
 
-### 2. Start the backend
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
-Backend runs at `http://localhost:8080`. Health check: `http://localhost:8080/actuator/health`.
-
-### 3. Start the frontend
+### 3. Run the dev server
 
 ```bash
 cd frontend
@@ -66,74 +52,132 @@ npm install
 npm run dev
 ```
 
-Frontend runs at `http://localhost:5173` with API requests proxied to the backend.
+Open [http://localhost:5173](http://localhost:5173). Restart the dev server after any `.env` change.
 
-## Personalizing Content
-
-Edit [`frontend/src/data/portfolio.ts`](frontend/src/data/portfolio.ts) to update:
-
-- Name, title, tagline, location
-- About summary and highlights
-- Skills, experience, projects
-- Education and certifications
-- Social links and contact email
-
-Replace [`frontend/public/resume.pdf`](frontend/public/resume.pdf) with your actual resume.
-
-## Production Build (Single JAR)
+### 4. Production build (optional local test)
 
 ```bash
-# Build frontend
 cd frontend
 npm run build
-
-# Package backend (copies frontend/dist into static resources)
-cd ../backend
-mvn clean package -DskipTests
-
-# Run
-java -jar target/portfolio-backend-1.0.0.jar
+npm run preview
 ```
 
-Visit `http://localhost:8080` — the JAR serves both the React app and the API.
+---
 
-## API Endpoints
+## Deploy to Vercel (step-by-step)
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/actuator/health` | Health check |
-| POST | `/api/contact` | Submit contact form (JSON body) |
+### Prerequisites
 
-**Contact request body:**
+- GitHub account
+- [Vercel](https://vercel.com) account (sign up with GitHub)
+- This repository pushed to GitHub
+- Formspree form ID ready
 
-```json
-{
-  "name": "Jane Doe",
-  "email": "jane@example.com",
-  "subject": "Job Opportunity",
-  "message": "I'd like to discuss a backend role..."
-}
+### Step 1 — Push code to GitHub
+
+If the project is not on GitHub yet:
+
+```bash
+cd porfolio-site
+git init
+git add .
+git commit -m "Portfolio site — React frontend for Vercel"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/portfolio-website.git
+git push -u origin main
 ```
 
-## Gmail SMTP Setup
+Use your actual repo name (e.g. `portfolio-website`).
 
-1. Enable 2-Factor Authentication on your Google account
-2. Generate an [App Password](https://myaccount.google.com/apppasswords)
-3. Use `smtp.gmail.com`, port `587`, and the app password as `MAIL_PASSWORD`
+### Step 2 — Import project in Vercel
 
-## Security Notes
+1. Go to [vercel.com/dashboard](https://vercel.com/dashboard)
+2. Click **Add New…** → **Project**
+3. Under **Import Git Repository**, find your repo and click **Import**
+4. If GitHub is not connected, click **Install** and authorize Vercel for your account
 
-- Never commit `.env` or SMTP credentials
-- Server-side validation is enforced on all contact submissions
-- Consider adding rate limiting before deploying to a public URL
+### Step 3 — Configure the project
 
-## Tech Stack
+On the **Configure Project** screen, set:
+
+| Setting | Value |
+|--------|--------|
+| **Framework Preset** | Vite (auto-detected) |
+| **Root Directory** | `frontend` — click **Edit**, select `frontend`, confirm |
+| **Build Command** | `npm run build` (default) |
+| **Output Directory** | `dist` (default) |
+| **Install Command** | `npm install` (default) |
+
+Do **not** deploy yet — add the environment variable first.
+
+### Step 4 — Add Formspree environment variable
+
+1. Expand **Environment Variables**
+2. Add:
+
+| Name | Value |
+|------|--------|
+| `VITE_FORMSPREE_FORM_ID` | Your Formspree form ID (e.g. `hjsdsdsu`) — **not** the full URL |
+
+3. Enable for **Production**, **Preview**, and **Development**
+
+### Step 5 — Deploy
+
+1. Click **Deploy**
+2. Wait for the build to finish (usually 1–3 minutes)
+3. Vercel shows a URL like `https://portfolio-website-xxx.vercel.app`
+
+### Step 6 — Verify the site
+
+Check these URLs (replace with your domain):
+
+- `/` — home page loads
+- `/projects/legally/architecture` — architecture page (no 404)
+- Contact form — submit a test message; confirm email in Formspree/inbox
+
+If architecture pages return 404, confirm [`frontend/vercel.json`](frontend/vercel.json) is committed and **Root Directory** is `frontend`.
+
+### Step 7 — Custom domain (optional)
+
+1. Vercel project → **Settings** → **Domains**
+2. Add your domain (e.g. `bashirmuhammed.dev`)
+3. Follow DNS instructions (A/CNAME records at your registrar)
+4. Wait for SSL (automatic)
+
+Update portfolio links in `portfolio.ts`, LinkedIn, and GitHub profile README.
+
+### Step 8 — Automatic deployments
+
+Every push to `main` triggers a new production deploy. Pull requests get preview URLs.
+
+---
+
+## Personalizing content
+
+Edit [`frontend/src/data/portfolio.ts`](frontend/src/data/portfolio.ts) for profile text, projects, and links.
+
+Replace [`frontend/public/resume.pdf`](frontend/public/resume.pdf) with your CV.
+
+Architecture docs live under [`frontend/src/data/architecture/`](frontend/src/data/architecture/).
+
+## Tech stack
 
 | Layer | Technology |
 |-------|------------|
-| Backend | Spring Boot 4.0.6, Java 21, Spring Mail, Jakarta Validation |
-| Frontend | React 19, TypeScript, Vite 6, Tailwind CSS 4 |
-| UI | Framer Motion, Lucide Icons, React Hook Form, Zod |
+| UI | React 19, TypeScript, Tailwind CSS 4, Framer Motion |
+| Build | Vite |
+| Contact | Formspree |
+| Hosting | Vercel |
+
+## Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| Contact form: "not configured" | Set `VITE_FORMSPREE_FORM_ID` in Vercel env vars and **redeploy** |
+| Contact works locally but not on Vercel | Env var must be set in Vercel dashboard; rebuild after adding |
+| `/projects/.../architecture` 404 | Root Directory = `frontend`; `vercel.json` present |
+| Old content after deploy | Hard refresh (Ctrl+Shift+R) or check latest deploy in Vercel |
+| Formspree spam | Enable reCAPTCHA in Formspree form settings |
 
 ## License
 
