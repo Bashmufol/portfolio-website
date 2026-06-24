@@ -202,11 +202,11 @@ export const socialLinks: SocialLink[] = [
     href: 'https://linkedin.com/in/bashir-muhammed',
     icon: 'linkedin',
   },
-  { label: 'Email', href: 'mailto:bashmufol@gmail.com', icon: 'mail' },
+  { label: 'Email', href: 'mailto:bashirmuhammed0923@gmail.com', icon: 'mail' },
 ]
 
 export const contact = {
-  email: 'bashmufol@gmail.com',
+  email: 'bashirmuhammed0923@gmail.com',
   headline: "Let's connect",
   subtext:
     "Whether you're hiring, collaborating on a project, or just want to say hello — I'd love to hear from you.",

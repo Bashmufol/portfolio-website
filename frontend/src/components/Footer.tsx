@@ -34,7 +34,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-slate-border/30 pt-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {year} {hero.name}. All rights reserved.</p>
-          <p className="font-mono text-xs">Java · Spring Boot · Enterprise Systems</p>
+          <p className="font-mono text-xs">React · TypeScript · Tailwind CSS</p>
         </div>
       </div>
     </footer>
