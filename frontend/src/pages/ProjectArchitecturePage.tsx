@@ -14,10 +14,10 @@ export function ProjectArchitecturePage() {
   }
 
   return (
-    <div className="section-container py-28 md:py-32">
+    <div className="section-container-wide py-24 sm:py-28 md:py-32">
       <Link
         to="/#projects"
-        className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
+        className="mb-8 inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
       >
         <ArrowLeft size={16} aria-hidden />
         Back to projects

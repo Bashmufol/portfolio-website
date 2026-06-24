@@ -1,11 +1,23 @@
+import { useLocation, useNavigate } from 'react-router-dom'
 import { hero, navLinks } from '../data/portfolio'
 import { scrollToSection } from '../hooks/useScrollSpy'
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const onHome = location.pathname === '/'
+
+  const handleNavClick = (id: string) => {
+    if (!onHome) {
+      navigate(`/#${id}`)
+      return
+    }
+    scrollToSection(id)
+  }
 
   return (
-    <footer className="border-t border-slate-border/40 bg-slate-deep/80 py-12">
+    <footer className="border-t border-slate-border/40 bg-slate-deep/80 py-12 pb-[calc(3rem+env(safe-area-inset-bottom))]">
       <div className="section-container">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div>
@@ -16,13 +28,13 @@ export function Footer() {
           </div>
 
           <nav aria-label="Footer navigation">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <ul className="flex flex-wrap gap-x-6 gap-y-3">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <button
                     type="button"
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-sm text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
+                    onClick={() => handleNavClick(link.id)}
+                    className="min-h-11 text-sm text-slate-600 transition-colors hover:text-copper-light dark:text-slate-400"
                   >
                     {link.label}
                   </button>

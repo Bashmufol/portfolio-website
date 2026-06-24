@@ -11,7 +11,7 @@ export function EducationSection() {
       title="Education & accomplishments"
       subtitle="Academic background and recognition that reflect leadership, excellence, and community impact."
     >
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         <div>
           <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
             <GraduationCap size={20} className="text-copper" />
@@ -62,7 +62,7 @@ export function EducationSection() {
                   <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500">{item.description}</p>
+                  <p className="mt-1 text-sm text-slate-500">{item.description}</p>
                 </div>
               </motion.div>
             ))}

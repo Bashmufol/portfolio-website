@@ -11,15 +11,15 @@ export function AboutSection() {
       title="Engineering with purpose"
       subtitle="Passionate about building systems that are reliable, maintainable, and deliver real value."
     >
-      <div className="grid items-center gap-12 lg:grid-cols-[280px_1fr]">
+      <div className="grid items-center gap-10 md:grid-cols-[minmax(0,240px)_1fr] md:gap-12 lg:grid-cols-[280px_1fr]">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mx-auto lg:mx-0"
+          className="mx-auto w-full max-w-xs md:mx-0 md:max-w-none"
         >
-          <div className="relative aspect-square w-64 overflow-hidden rounded-2xl border border-slate-border/60 bg-slate-elevated lg:w-72">
+          <div className="relative mx-auto aspect-square w-full max-w-[16rem] overflow-hidden rounded-2xl border border-slate-border/60 bg-slate-elevated sm:max-w-xs lg:max-w-[18rem]">
             <div className="absolute inset-0 bg-gradient-to-br from-copper/20 via-transparent to-teal-muted/20" />
             <div className="flex h-full flex-col items-center justify-center gap-3 p-6">
               <div className="flex h-24 w-24 items-center justify-center rounded-full border border-copper/30 bg-slate-muted">
@@ -30,7 +30,7 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-          <div className="mt-4 text-center lg:text-left">
+          <div className="mt-4 text-center md:text-left">
             <p className="font-semibold text-slate-900 dark:text-white">{hero.name}</p>
             <p className="text-sm text-slate-500">{hero.location}</p>
           </div>
@@ -42,7 +42,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="space-y-4 text-justify leading-relaxed text-slate-600 dark:text-slate-400">
+          <div className="prose-readable space-y-4 text-slate-600 dark:text-slate-400">
             {about.summary.split('\n\n').map((paragraph) => (
               <p key={paragraph.slice(0, 40)}>{paragraph}</p>
             ))}

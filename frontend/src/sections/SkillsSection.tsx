@@ -12,7 +12,7 @@ export function SkillsSection() {
       subtitle="A deep toolkit spanning the Java ecosystem, cloud infrastructure, and modern engineering practices."
       className="section-alt"
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {skillCategories.map((category, catIndex) => (
           <motion.div
             key={category.name}

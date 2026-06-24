@@ -16,11 +16,12 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
   projectTitle: 'Legally',
   documentTitle: 'Legally Backend — System Design Document',
   version: '1.0',
-  author: 'Bashir Muhammed',
+  author: 'Bashir Mufol (portfolio)',
   scope: 'Spring Boot API (legally-backend)',
   summary:
     'Architecture of the Legally backend: HTTP request flow, multi-provider AI legal and contact research, and integration with PostgreSQL, Firebase, Google Cloud, and external LLM services.',
-  pdfDownloadHref: '/architecture/legally/legally-backend-system-design.pdf',
+  pdfDownloadHref:
+    '/architecture/legally/legally-backend-system-design-with-diagrams.pdf',
   sections: [
     {
       id: 'purpose',
@@ -104,12 +105,10 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
       title: '4. Layered architecture',
       figures: [
         figure(
-          'fig-2a',
-          'Figure 2: Layered backend architecture (part 1).',
+          'fig-2',
+          'Figure 2: Layered backend architecture from REST controllers through persistence.',
           3,
         ),
-        figure('fig-2b', 'Figure 2: Layered backend architecture (part 2).', 4),
-        figure('fig-2c', 'Figure 2: Layered backend architecture (part 3).', 5),
       ],
       subsections: [
         {
@@ -146,7 +145,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         figure(
           'fig-3',
           'Figure 3: Security filter chain for /api/** requests.',
-          6,
+          4,
         ),
       ],
     },
@@ -157,7 +156,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         figure(
           'fig-4',
           'Figure 4: End-to-end consult workflow from POST /api/consult to response.',
-          7,
+          4,
         ),
       ],
       paragraphs: [
@@ -177,29 +176,16 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         'If supportsNativeMultimodal() is false: send text prompt with digest; do not attach raw bytes.',
         'If true (GeminiLegalLlmProvider): attach media parts; enable Google Search grounding.',
         'Accept result only if LlmResponseParser.hasSubstantiveLegalContent().',
+        'If attachments exist but both digest and transcript are empty → media processing failed response.',
+        'Otherwise → no-information response with suggested next steps (may still fetch contacts).',
+        'Contact research uses the same pattern via ContactLlmProvider and ContactResponseParser validation rules.',
       ],
-      subsections: [
-        {
-          id: 'after-exhaustion',
-          title: 'After chain exhaustion',
-          bullets: [
-            'If attachments exist but both digest and transcript are empty → media processing failed response.',
-            'Otherwise → no-information response with suggested next steps (may still fetch contacts).',
-            'Contact research uses the same pattern via ContactLlmProvider and ContactResponseParser validation rules.',
-          ],
-          figures: [
-            figure(
-              'fig-5a',
-              'Figure 5: Ordered legal and contact LLM failover chains (part 1).',
-              9,
-            ),
-            figure(
-              'fig-5b',
-              'Figure 5: Ordered legal and contact LLM failover chains (part 2).',
-              10,
-            ),
-          ],
-        },
+      figures: [
+        figure(
+          'fig-5',
+          'Figure 5: Ordered legal and contact LLM failover chains.',
+          6,
+        ),
       ],
     },
     {
@@ -235,7 +221,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         figure(
           'fig-6',
           'Figure 6: Core PostgreSQL entities and relationships.',
-          11,
+          7,
         ),
       ],
     },
@@ -249,7 +235,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         figure(
           'fig-7',
           'Figure 7: Upload storage paths and read flow for LLM services.',
-          12,
+          8,
         ),
       ],
     },
@@ -275,7 +261,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         figure(
           'fig-8',
           'Figure 8: Production deployment topology on Google Cloud.',
-          13,
+          8,
         ),
       ],
     },
@@ -312,7 +298,7 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
     },
     {
       id: 'highlights',
-      title: '14. Design highlights',
+      title: '14. Design highlights for reviewers',
       bullets: [
         'Provider pattern with ordered failover for legal and contact chains.',
         'Clear separation between application services and llm integration package.',
@@ -320,6 +306,9 @@ export const legallyArchitecture: ProjectArchitectureDoc = {
         'Dual multimodal path: Gemini native vs digest + text-only fallbacks.',
         'First-class degraded responses for jurisdiction, media, and no-information cases.',
         'Session-scoped retention with scheduled purge.',
+      ],
+      paragraphs: [
+        'Document generated for portfolio use. Reflects the com.legally backend codebase.',
       ],
     },
   ],

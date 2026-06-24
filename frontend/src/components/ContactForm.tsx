@@ -19,7 +19,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>
 
 const inputClasses =
-  'w-full rounded-lg border border-slate-border bg-slate-muted/50 px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30 dark:text-slate-200 dark:placeholder:text-slate-500'
+  'w-full rounded-lg border border-slate-border bg-slate-muted/50 px-4 py-3 text-base text-slate-800 placeholder:text-slate-400 transition-colors focus:border-copper/50 focus:outline-none focus:ring-1 focus:ring-copper/30 dark:text-slate-200 dark:placeholder:text-slate-500'
 
 export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')

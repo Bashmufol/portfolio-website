@@ -44,7 +44,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-slate-900 dark:text-white">{link.label}</p>
-                      <p className="text-xs text-slate-500">
+                      <p className="break-all text-xs text-slate-500">
                         {link.icon === 'mail' ? contact.email : link.href.replace('https://', '')}
                       </p>
                     </div>

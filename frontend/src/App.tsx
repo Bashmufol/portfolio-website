@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main>
+      <main className="overflow-x-clip">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
