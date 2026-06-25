@@ -33,11 +33,6 @@ export interface Education {
   details?: string
 }
 
-export interface Accomplishment {
-  title: string
-  description: string
-}
-
 export const navLinks = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
@@ -62,7 +57,7 @@ export const hero = {
 export const about = {
   summary: `I've spent the last few years on Java backend work, building REST APIs and keeping services running in production. That meant working closely with databases, containerizing applications with Docker, and supporting deployments on AWS and Kubernetes.
 
-What I enjoy most is the day-to-day engineering: cleaning up code so the next person can follow it, learning from senior developers, and doing my part in CI/CD so features ship on time. I pick things up quickly, I communicate clearly, and I'm looking for a team where I can keep growing as a backend engineer.`,
+What I enjoy most is the day-to-day engineering: cleaning up code so the next person can follow it, learning from senior engineers, and doing my part in CI/CD so features ship on time. I pick things up quickly, I communicate clearly, and I'm looking for a team where I can keep growing as a backend engineer.`,
 }
 
 export const skillCategories: SkillCategory[] = [
@@ -203,23 +198,6 @@ export const education: Education[] = [
     period: 'Expected Oct 2026',
     details:
       'Relevant coursework: Data Structures, Algorithms, Database Systems. Technical project: built a Java-based inventory system for lab samples, reducing entry errors.',
-  },
-]
-
-export const accomplishments: Accomplishment[] = [
-  {
-    title: 'AAF Scholarship Beneficiary',
-    description: 'Awarded for academic excellence and leadership potential.',
-  },
-  {
-    title: 'Organizing Member, Google Developer Student Clubs',
-    description:
-      'Contributed to planning, coordinating, and executing impactful tech events and initiatives for the student developer community.',
-  },
-  {
-    title: "NSBS Students' Representative Council Leadership Award",
-    description:
-      'Honored for student leadership roles and initiatives impacting 800+ students.',
   },
 ]
 
