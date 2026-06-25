@@ -1,12 +1,12 @@
 import type { ProjectArchitectureDoc } from './types'
-import { authenticationApiArchitecture } from './authentication-api'
+import { evochargeArchitecture } from './evocharge'
 import { legallyArchitecture } from './legally'
 import { terratradeArchitecture } from './terratrade'
 
 const architectureBySlug: Record<string, ProjectArchitectureDoc> = {
   legally: legallyArchitecture,
   terratrade: terratradeArchitecture,
-  'authentication-api': authenticationApiArchitecture,
+  evocharge: evochargeArchitecture,
 }
 
 export function getArchitectureBySlug(
@@ -20,5 +20,5 @@ export function getArchitecturePath(slug: string): string {
   return `/projects/${slug}/architecture`
 }
 
-export { legallyArchitecture, terratradeArchitecture, authenticationApiArchitecture }
+export { legallyArchitecture, terratradeArchitecture, evochargeArchitecture }
 export type { ProjectArchitectureDoc } from './types'

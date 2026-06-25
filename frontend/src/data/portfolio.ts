@@ -172,12 +172,27 @@ export const projects: Project[] = [
     demo: 'https://terratrade-50d.pages.dev/',
   },
   {
-    slug: 'authentication-api',
-    title: 'Authentication API',
+    slug: 'evocharge',
+    title: 'EvoCharge',
     description:
-      'Secure authentication API with JWT-based login and session handling, user management, and token-based password reset.',
-    tech: ['Spring Boot', 'Spring Security', 'JWT', 'MySQL'],
-    github: 'https://github.com/bashmufol',
+      'EvoCharge is an EV charging intelligence application built for Nigeria’s fragmented public charging market. It unifies station data from multiple operators into a single normalized model so drivers can discover chargers by city, status, and connector type, compare options through a weighted EvoScore ranking engine, and get location-aware recommendations based on distance, availability, wait time, and reliability. The platform also exposes network analytics, live station status streaming, and a natural-language charging advisor that suggests ranked stations from plain-English queries. The backend is implemented in Java 21 with Spring Boot, exposing versioned REST APIs backed by DynamoDB, server-sent events for real-time updates, and AWS integrations for containerized deployment on ECS, event-driven status pulses via EventBridge and Lambda, and generative AI through Amazon Bedrock.',
+    tech: [
+      'Java 21',
+      'Spring Boot',
+      'REST APIs',
+      'Maven',
+      'DynamoDB',
+      'AWS',
+      'AWS CDK',
+      'AWS SDK v2',
+      'SSE',
+      'Docker',
+      'CI/CD',
+      'Modular Integrations',
+      'Cloud-native Architecture',
+    ],
+    github: 'https://github.com/Bashmufol/EvoCharge',
+    demo: 'https://d8061ggv2y910.cloudfront.net/',
   },
 ]
 
