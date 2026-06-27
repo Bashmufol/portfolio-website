@@ -187,7 +187,7 @@ export const projects: Project[] = [
       'Cloud-native Architecture',
     ],
     github: 'https://github.com/Bashmufol/EvoCharge',
-    demo: 'https://d8061ggv2y910.cloudfront.net/',
+    demo: 'https://d2zlb8ixz2ivq7.cloudfront.net/',
   },
 ]
 

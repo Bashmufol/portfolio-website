@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Code2 } from 'lucide-react'
 import { about, hero } from '../data/portfolio'
 import { SectionShell } from '../components/SectionShell'
 
@@ -20,15 +19,12 @@ export function AboutSection() {
           className="mx-auto w-full max-w-xs md:mx-0 md:max-w-none"
         >
           <div className="relative mx-auto aspect-square w-full max-w-[16rem] overflow-hidden rounded-2xl border border-slate-border/60 bg-slate-elevated sm:max-w-xs lg:max-w-[18rem]">
-            <div className="absolute inset-0 bg-gradient-to-br from-copper/20 via-transparent to-teal-muted/20" />
-            <div className="flex h-full flex-col items-center justify-center gap-3 p-6">
-              <div className="flex h-24 w-24 items-center justify-center rounded-full border border-copper/30 bg-slate-muted">
-                <Code2 size={40} className="text-copper" />
-              </div>
-              <p className="text-center font-mono text-xs text-slate-500">
-                Replace with your photo
-              </p>
-            </div>
+            <img
+              src="/Profile.jpg"
+              alt={`Portrait of ${hero.name}`}
+              className="h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-copper/10 via-transparent to-teal-muted/10" />
           </div>
           <div className="mt-4 text-center md:text-left">
             <p className="font-semibold text-slate-900 dark:text-white">{hero.name}</p>
