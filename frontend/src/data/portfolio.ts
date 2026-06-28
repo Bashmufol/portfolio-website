@@ -107,9 +107,21 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: Experience[] = [
   {
+    company: 'Turing',
+    role: 'Java Engineer (AI Systems) — Contractor',
+    period: 'May 2025 — Jan 2026',
+    location: 'Remote',
+    highlights: [
+      'Developed, optimized, and maintained high-performance Java components for training and aligning large language models (LLMs).',
+      'Built tools and workflows to support Reinforcement Learning with Human Feedback (RLHF), improving reward modeling pipelines.',
+      'Led efforts on Supervised Fine-Tuning (SFT), collaborating with researchers to curate and structure high-quality task-specific datasets.',
+      'Delivered insights and performance recommendations through peer reviews and evaluation reports.',
+    ],
+  },
+  {
     company: 'Sysserve',
     role: 'Java Backend Developer',
-    period: 'Dec 2022 — Jul 2025',
+    period: 'Jun 2023 — Nov 2025',
     location: 'Lagos, Nigeria',
     highlights: [
       'Developed and maintained backend services with Java and Spring Boot.',
@@ -121,16 +133,15 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: 'IRL IT Solutions',
-    role: 'Computer Operator',
-    period: 'Jul 2019 — Sep 2021',
-    location: 'Kaduna, Nigeria',
+    company: 'Awibi Medtech',
+    role: 'Backend Developer Intern',
+    period: 'Apr 2021 — Apr 2022',
+    location: 'Ilorin, Nigeria',
     highlights: [
-      'Conducted ICT training sessions for clients.',
-      'Provided technical troubleshooting for computer systems, reducing system downtime.',
-      'Collaborated with the IT team to resolve system and database issues.',
-      'Operated and maintained computer systems for CBT services.',
-      'Provided front-desk technical assistance, enhancing client satisfaction through clear communication and effective problem resolution.',
+      'Assisted in developing secure REST APIs using Spring Boot for the Awibi Electronic Health Record system, improving how clinics manage patient data.',
+      'Optimized database queries to ensure sensitive medical records could be retrieved quickly and securely.',
+      'Wrote unit tests and fixed backend bugs to increase the stability and accuracy of the core healthcare platform.',
+      'Collaborated with the engineering team to troubleshoot system issues, participate in code reviews, and manage version control using Git.',
     ],
   },
 ]
