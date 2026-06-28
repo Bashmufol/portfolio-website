@@ -8,7 +8,7 @@ export function ExperienceSection() {
       id="experience"
       label="Experience"
       title="Professional journey"
-      subtitle="A track record of delivering impactful backend solutions across fintech, SaaS, and data platforms."
+      subtitle="A track record of delivering scalable, production-grade backend systems that power high-traffic applications and complex business workflows."
     >
       <ExperienceTimeline experiences={experiences} />
     </SectionShell>
