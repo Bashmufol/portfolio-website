@@ -208,7 +208,7 @@ export const education: Education[] = [
     degree: 'Bachelor of Science',
     period: 'Expected Oct 2026',
     details:
-      'Relevant coursework: Data Structures, Algorithms, Database Systems. Technical project: built a Java-based inventory system for lab samples, reducing entry errors.',
+      'Relevant coursework: Data Structures, Algorithms, Database Systems.',
   },
 ]
 
