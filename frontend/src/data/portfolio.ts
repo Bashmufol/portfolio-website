@@ -71,12 +71,15 @@ export const skillCategories: SkillCategory[] = [
       { name: 'MongoDB', level: 75 },
       { name: 'Redis', level: 72 },
       { name: 'Microservices', level: 70 },
+      { name: 'RabbitMQ', level: 72 },
+      { name: 'Apache Kafka', level: 70 },
     ],
   },
   {
     name: 'Cloud & DevOps',
     skills: [
-      { name: 'AWS (ECS, Lambda)', level: 75 },
+      { name: 'AWS', level: 75 },
+      { name: 'AWS CDK', level: 72 },
       { name: 'Docker', level: 82 },
       { name: 'Kubernetes', level: 70 },
       { name: 'Git', level: 90 },
