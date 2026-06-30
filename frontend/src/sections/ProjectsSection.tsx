@@ -8,7 +8,7 @@ export function ProjectsSection() {
       id="projects"
       label="Projects"
       title="Selected work"
-      subtitle="Representative projects showcasing API design, microservices architecture, and production-ready delivery."
+      subtitle="A selection of backend systems I've designed and shipped in Java and Spring Boot, each built for live use with reliable and solid API design, clean integrations, and maintainable code."
       className="section-alt"
     >
       <div className="grid gap-6 md:grid-cols-2">

@@ -209,7 +209,7 @@ export const education: Education[] = [
   {
     institution: 'University of Ilorin, Nigeria',
     degree: 'Bachelor of Science',
-    period: 'Expected Aug 2026',
+    period: 'Expected Oct 2026',
     details:
       'Relevant coursework: Data Structures, Algorithms, Database Systems.',
   },

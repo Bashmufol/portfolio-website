@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { GraduationCap } from 'lucide-react'
 import { education } from '../data/portfolio'
 import { SectionShell } from '../components/SectionShell'
 
@@ -7,11 +8,16 @@ export function EducationSection() {
     <SectionShell
       id="education"
       label="Education"
-      title="Academic background"
-      subtitle="Coursework and degree in progress."
+      title="Education"
+      subtitle="Academic background and technical foundation."
     >
-      <div className="space-y-4">
-        {education.map((item, index) => (
+      <div>
+        <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
+          <GraduationCap size={20} className="text-copper" />
+          Education
+        </h3>
+        <div className="space-y-4">
+          {education.map((item, index) => (
             <motion.div
               key={item.institution}
               initial={{ opacity: 0, x: -16 }}
@@ -32,6 +38,7 @@ export function EducationSection() {
               )}
             </motion.div>
           ))}
+        </div>
       </div>
     </SectionShell>
   )
