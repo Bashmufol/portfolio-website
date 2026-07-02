@@ -80,6 +80,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'AWS', level: 75 },
       { name: 'AWS CDK', level: 72 },
+      { name: 'GCP', level: 72 },
       { name: 'Docker', level: 82 },
       { name: 'Kubernetes', level: 70 },
       { name: 'Git', level: 90 },
@@ -155,7 +156,7 @@ export const projects: Project[] = [
     title: 'Legally',
     description:
       'Legally is a web app that helps people understand everyday legal questions (tenancy, land, employment, police encounters, and more) in plain language. It lets users describe a situation by text, voice, or uploads such as photos and PDFs. The app works out which jurisdiction apply and returns a summary, legal points with source links where possible, practical steps, and contacts to reach out to. I built the backend in Java 21 with Spring Boot as a REST API on Google Cloud Run, using PostgreSQL (Cloud SQL) for sessions and history, Firebase for authentication and file storage, and a provider-chain design that orchestrates Gemini and fallback LLMs through Google Speech-to-Text and custom integration services.',
-    tech: ['Java 21', 'Spring Boot 4', 'Spring AI', 'Firebase', 'Google Cloud', 'JUnit', 'Docker'],
+    tech: ['Java 21', 'Spring Boot 4', 'Spring AI', 'Firebase', 'GCP', 'JUnit', 'Docker'],
     github: 'https://github.com/Bashmufol/Legally',
     demo: 'https://legally-7f34d.web.app/',
   },

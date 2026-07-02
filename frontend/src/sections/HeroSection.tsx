@@ -85,7 +85,7 @@ export function HeroSection() {
             <Button className="w-full sm:w-auto" onClick={() => scrollToSection('projects')}>
               View Projects
             </Button>
-            <Button href="/resume.pdf" download variant="secondary" className="w-full sm:w-auto">
+            <Button href="/Bashir_Muhammed_Resume.pdf" download variant="secondary" className="w-full sm:w-auto">
               <Download size={16} />
               Download Resume
             </Button>
